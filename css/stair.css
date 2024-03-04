@@ -1,0 +1,124 @@
+.stair__wrapper {
+  margin-top: 100px;
+  width: 100%;
+  height: 86vh;
+  background: rgb(127, 149, 250);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 25%;
+  height: 85%;
+  background: rgb(99, 81, 35);
+  border-radius: 50% 50% 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
+  overflow: hidden;
+  position: relative;
+  transition: 1s;
+}
+
+.box::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: red;
+  border-radius: 50% 0 0 0;
+  z-index: 3;
+  transition: 1s;
+}
+.box::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: red;
+  border-radius: 0 50% 0 0;
+  z-index: 3;
+  transition: 1s;
+}
+
+.box:hover::before {
+  left: -50%;
+}
+.box:hover::after {
+  right: -50%;
+}
+
+.sun {
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  border: 8px solid white;
+  border-bottom: 8px solid rgb(10, 57, 229);
+  border-radius: 50%;
+  background: transparent;
+
+  animation: loaDing 0.4s linear 0s infinite forwards;
+}
+
+@keyframes loaDing {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.staires {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  gap: 15px;
+}
+
+.stair {
+  width: 1px;
+  height: 50px;
+  background: rgb(9, 155, 6);
+  animation: stairMove1 1.5s linear 0s infinite forwards;
+}
+
+.stair:nth-child(1) {
+  animation: stairMove1 1.5s linear alternate 0s infinite none;
+}
+@keyframes stairMove1 {
+  to {
+    width: 20%;
+  }
+}
+.stair:nth-child(2) {
+  animation: stairMove2 1.5s linear alternate 0s infinite none;
+}
+@keyframes stairMove2 {
+  to {
+    width: 40%;
+  }
+}
+.stair:nth-child(3) {
+  animation: stairMove3 1.5s linear alternate 0s infinite none;
+}
+@keyframes stairMove3 {
+  to {
+    width: 60%;
+  }
+}
+
+.stair:nth-child(4) {
+  animation: stairMove4 1.5s linear alternate 0s infinite none;
+}
+@keyframes stairMove4 {
+  to {
+    width: 80%;
+  }
+}
